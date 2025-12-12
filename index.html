@@ -590,16 +590,26 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
             .container {
                 padding: 0 20px;
+                width: 100%;
+            }
+
+            header {
+                padding: 120px 0 80px;
             }
 
             header h1 {
-                font-size: 3.5em;
+                font-size: 2.5em;
+                letter-spacing: -1px;
             }
 
             header p {
-                font-size: 1.3em;
+                font-size: 1.2em;
             }
 
             nav {
@@ -610,41 +620,100 @@
                 margin: 0;
                 border-radius: 0;
                 padding: 5px;
+                width: 100%;
             }
 
             nav ul {
                 flex-direction: row;
                 align-items: center;
                 padding: 15px 0;
+                justify-content: center;
             }
 
             nav ul li {
-                margin: 0 15px;
+                margin: 0 10px;
             }
 
             nav ul li a {
-                font-size: 0.9em;
-                padding: 8px 15px;
+                font-size: 0.85em;
+                padding: 8px 12px;
             }
 
             h2 {
-                font-size: 2.8em;
+                font-size: 2.2em;
+            }
+
+            section {
+                padding: 60px 0;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
 
-            .about-content, .project-body, .contact-content {
-                padding: 50px 30px;
+            .about-content {
+                padding: 40px 25px;
+                border-radius: 25px;
+            }
+
+            .project-card {
+                border-radius: 25px;
+            }
+
+            .project-header {
+                padding: 40px 25px;
+            }
+
+            .project-body {
+                padding: 40px 25px;
             }
 
             .project-header h3 {
-                font-size: 2em;
+                font-size: 1.8em;
+            }
+
+            .project-header p {
+                font-size: 1.2em;
+            }
+
+            .project-body h4 {
+                font-size: 1.3em;
+            }
+
+            .project-body ul li {
+                font-size: 1em;
+            }
+
+            .tech-stack {
+                gap: 10px;
+            }
+
+            .tech-badge {
+                padding: 10px 20px;
+                font-size: 0.9em;
             }
 
             .screenshot-gallery {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-content {
+                padding: 50px 25px;
+                border-radius: 25px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .contact-btn {
+                width: 100%;
+                text-align: center;
+                padding: 18px 30px;
             }
         }
     </style>
@@ -835,13 +904,30 @@
                 <p style="font-size: 1.4em; margin-bottom: 30px;">
                     I'm always interested in hearing about new opportunities, collaborations, or just connecting with fellow developers!
                 </p>
-                <p style="font-size: 1.2em;">
-                    Whether you have a project in mind, want to discuss educational technology, or just want to say hello, feel free to reach out.
+                <p style="font-size: 1.2em; margin-bottom: 40px;">
+                    Whether you have a project in mind, want to discuss business solutions, or just want to say hello, feel free to reach out.
                 </p>
+                
+                <div style="margin-bottom: 40px;">
+                    <a href="Israel-Oyewumi-CV.pdf" class="contact-btn" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border: none; padding: 20px 50px; font-size: 1.2em;" download>
+                        📄 DOWNLOAD CV
+                    </a>
+                </div>
+                
                 <div class="contact-links">
-                    <a href="mailto:your.email@example.com" class="contact-btn">EMAIL ME</a>
-                    <a href="#" class="contact-btn">LINKEDIN</a>
-                    <a href="#" class="contact-btn">GITHUB</a>
+                    <a href="mailto:israeloyewumi@email.com" class="contact-btn">📧 EMAIL ME</a>
+                    <a href="tel:+2348164417878" class="contact-btn">📱 CALL ME</a>
+                    <a href="#" class="contact-btn">💼 LINKEDIN</a>
+                    <a href="#" class="contact-btn">💻 GITHUB</a>
+                </div>
+                
+                <div style="margin-top: 50px; padding-top: 40px; border-top: 1px solid rgba(79, 172, 254, 0.2);">
+                    <p style="font-size: 1.1em; color: rgba(255, 255, 255, 0.7); margin-bottom: 10px;">
+                        📍 Based in Abuja, FCT, Nigeria
+                    </p>
+                    <p style="font-size: 1em; color: rgba(255, 255, 255, 0.6);">
+                        Available for freelance projects and full-time opportunities
+                    </p>
                 </div>
             </div>
         </div>
