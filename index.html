@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Israel Oyewumi - App Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -125,6 +128,7 @@
             animation: fadeInUp 1s ease 0.3s both;
             position: relative;
             z-index: 1;
+            font-family: 'Caveat', cursive;
         }
 
         nav {
@@ -138,6 +142,14 @@
             margin: 0 40px;
             border-radius: 50px;
             padding: 10px;
+            transition: all 0.3s;
+        }
+
+        nav.scrolled {
+            top: 0;
+            margin: 0;
+            border-radius: 0;
+            padding: 5px;
         }
 
         nav ul {
@@ -185,6 +197,7 @@
             background-clip: text;
             animation: fadeIn 1s ease;
             letter-spacing: -1px;
+            font-family: 'Playfair Display', serif;
         }
 
         .about-content {
@@ -301,6 +314,7 @@
             position: relative;
             z-index: 1;
             letter-spacing: -0.5px;
+            font-family: 'Playfair Display', serif;
         }
 
         .project-header p {
@@ -309,6 +323,8 @@
             position: relative;
             z-index: 1;
             font-weight: 300;
+            font-family: 'Caveat', cursive;
+            font-size: 1.6em;
         }
 
         .project-body {
@@ -587,17 +603,28 @@
             }
 
             nav {
-                margin: 0 20px;
-                border-radius: 30px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: 0;
+                border-radius: 0;
+                padding: 5px;
             }
 
             nav ul {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
+                padding: 15px 0;
             }
 
             nav ul li {
-                margin: 10px 0;
+                margin: 0 15px;
+            }
+
+            nav ul li a {
+                font-size: 0.9em;
+                padding: 8px 15px;
             }
 
             h2 {
@@ -635,7 +662,7 @@
     <header>
         <div class="container">
             <h1>ISRAEL OYEWUMI</h1>
-            <p>App Developer | Innovating Education Through Technology</p>
+            <p>Web & App Developer | Innovating Businesses Through Technology</p>
         </div>
     </header>
 
@@ -652,13 +679,13 @@
             <h2>ABOUT ME</h2>
             <div class="about-content">
                 <p>
-                    Hi! I'm Israel Oyewumi, a passionate app developer based in Jos, Plateau State, Nigeria. I specialize in creating innovative applications that solve real-world problems and make a tangible difference in people's lives.
+                    Hi! I'm Israel Oyewumi, a passionate web and app developer based in Jos, Plateau State, Nigeria. I specialize in creating innovative applications that solve real-world problems and make a tangible difference in people's lives.
                 </p>
                 <p>
-                    My journey into software development began with a fascination for how technology can transform education. I believe that great software should be intuitive, efficient, and purpose-driven. I build robust applications using modern technologies like React, React Native, Electron, and TypeScript to deliver seamless experiences across desktop and mobile platforms.
+                    My journey into software development began with building websites using HTML, CSS, and JavaScript, and evolved into creating powerful desktop and mobile applications. I believe that great software should be intuitive, efficient, and purpose-driven. I build robust applications using modern technologies like React, React Native, Electron, and TypeScript to deliver seamless experiences across all platforms.
                 </p>
                 <p>
-                    I'm particularly interested in educational technology and creating tools that empower teachers and students. My work demonstrates a commitment to solving practical challenges in the education sector through thoughtful software design and full-stack development.
+                    I'm particularly interested in creating applications for all forms of business - from education to enterprise solutions. My work demonstrates a commitment to solving practical business challenges through thoughtful software design and full-stack development, helping organizations streamline operations and achieve their goals.
                 </p>
                 <p>
                     When I'm not coding, I'm exploring new technologies, learning best practices in software architecture, and thinking about how to make my next application even better than the last.
@@ -728,10 +755,10 @@
                                 <img src="images/eduapp-student-dashboard.png.PNG" alt="EduApp Student Dashboard">
                             </div>
                             <div class="screenshot">
-                                <img src="images/eduapp-assessment-library.png.PNG" alt="EduApp Assessment Library">
+                                <img src="images/eduapp-assessment-library.png.PNG." alt="EduApp Assessment Library">
                             </div>
                             <div class="screenshot">
-                                <img src="images/eduapp-taking-assessment.png.PNG" alt="EduApp Taking Assessment">
+                                <img src="images/eduapp-taking-assessment.png.PNG.PNG" alt="EduApp Taking Assessment">
                             </div>
                         </div>
                     </div>
@@ -825,5 +852,17 @@
             <p>&copy; 2024 Israel Oyewumi. Built with passion for education and technology.</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile navbar scroll behavior
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
