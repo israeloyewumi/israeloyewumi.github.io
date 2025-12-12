@@ -20,12 +20,15 @@
             color: #ffffff;
             background: #000000;
             overflow-x: hidden;
+            width: 100%;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 40px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         /* Ultra smooth gradient background */
@@ -184,6 +187,8 @@
         section {
             padding: 120px 0;
             position: relative;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         h2 {
@@ -251,6 +256,8 @@
             grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
             gap: 60px;
             margin-top: 60px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .project-card {
@@ -264,6 +271,8 @@
                         inset 0 1px 0 rgba(255, 255, 255, 0.05);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .project-card::before {
@@ -413,6 +422,8 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 40px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .screenshot {
@@ -423,6 +434,8 @@
             border: 2px solid rgba(79, 172, 254, 0.2);
             background: rgba(30, 30, 40, 0.9);
             position: relative;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .screenshot::before {
@@ -452,6 +465,7 @@
             height: auto;
             display: block;
             transition: transform 0.4s;
+            max-width: 100%;
         }
 
         .screenshot:hover img {
@@ -589,16 +603,25 @@
             to { opacity: 1; }
         }
 
+        /* MOBILE STYLES - FIXED FOR PROPER CENTERING */
         @media (max-width: 768px) {
+            * {
+                max-width: 100%;
+            }
+            
             body {
                 overflow-x: hidden;
-                text-align: center;
+                width: 100%;
+                margin: 0;
+                padding: 0;
             }
 
             .container {
                 padding: 0 20px;
                 width: 100%;
+                max-width: 100%;
                 margin: 0 auto;
+                box-sizing: border-box;
             }
 
             header {
@@ -654,61 +677,29 @@
                 text-align: center;
             }
 
-         @media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-        text-align: center;
-        width: 100%;
-    }
+            /* CRITICAL FIX: Changed from 600px to 1fr */
+            .projects-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 40px;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+                margin: 0 auto;
+            }
 
-    .container {
-        padding: 0 20px;
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    /* THIS IS THE KEY FIX */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .project-card {
-        border-radius: 25px;
-        margin: 0 auto;
-        max-width: 100%;
-        width: 100%;
-    }
-
-    /* FIX FOR SCREENSHOT GALLERY */
-    .screenshot-gallery {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .screenshot {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Rest of your mobile styles... */
-}
+            .project-card {
+                border-radius: 25px;
+                margin: 0 auto;
+                max-width: 100%;
+                width: 100%;
+                box-sizing: border-box;
+            }
 
             .about-content {
                 padding: 40px 25px;
                 border-radius: 25px;
                 text-align: left;
-                margin: 0 auto;
-                max-width: 100%;
-            }
-
-            .project-card {
-                border-radius: 25px;
                 margin: 0 auto;
                 max-width: 100%;
             }
@@ -761,9 +752,26 @@
                 font-size: 0.9em;
             }
 
+            /* FIX FOR SCREENSHOT GALLERY */
             .screenshot-gallery {
+                display: grid;
                 grid-template-columns: 1fr;
                 gap: 20px;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .screenshot {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .screenshot img {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
             }
 
             .contact-content {
